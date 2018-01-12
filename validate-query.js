@@ -12,7 +12,7 @@ const loadSchema = (config) => {
     return graphql.buildSchema(config.getSchemaSDL())
   } catch (error) {
     for (loc of error.locations) {
-      console.log(chalk.red(`schema (${loc.line}, ${loc.column}): ${error.message}`))
+      console.log(chalk.red(error.toString()))
     }
   }
 }
@@ -27,12 +27,13 @@ const validateQuery = async (schema, queryFile) => {
   const queryText = await readFile(queryFile)
   try {
     const queryDoc = parse(queryText)
-    graphql.validate(schema, queryDoc)
   } catch (error) {
-    for (loc of error.locations) {
-      console.log(chalk.red(`${queryFile} (${loc.line}, ${loc.column}): ${error.message}`))
-    }
+    console.log(chalk.red(error.toString()))
     process.exit(1)
+  }
+  const errors = graphql.validate(schema, queryDoc)
+  for (error of errors) {
+    console.log(chalk.red(error.toString()))
   }
 }
 
