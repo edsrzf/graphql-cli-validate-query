@@ -1,0 +1,15 @@
+{
+  "name": "graphql-cli-validate-query",
+  "version": "1.0.0",
+  "description": "GraphQL query validation plugin for graphql-cli",
+  "main": "index.js",
+  "repository": "https://github.com/edsrzf/grpahql-cli-validate-query",
+  "author": "Evan Shaw",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "chalk": "^2.3.0",
+    "graphql": "^0.12.3",
+    "graphql-cli": "^2.10.1"
+  }
+}
