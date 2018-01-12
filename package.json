@@ -1,6 +1,6 @@
 {
   "name": "graphql-cli-validate-query",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "GraphQL query validation plugin for graphql-cli",
   "main": "index.js",
   "repository": "https://github.com/edsrzf/grpahql-cli-validate-query",
