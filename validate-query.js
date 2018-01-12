@@ -24,7 +24,7 @@ const readFile = (path) => {
 const validateQuery = async (schema, queryFile) => {
   const queryText = await readFile(queryFile)
   try {
-    const queryDoc = parse(queryText)
+    const queryDoc = graphql.parse(queryText)
   } catch (error) {
     console.log(chalk.red(error.toString()))
     process.exit(1)
