@@ -11,9 +11,7 @@ const loadSchema = (config) => {
   try {
     return graphql.buildSchema(config.getSchemaSDL())
   } catch (error) {
-    for (loc of error.locations) {
-      console.log(chalk.red(error.toString()))
-    }
+    console.log(chalk.red(error.toString()))
   }
 }
 
